@@ -1,6 +1,7 @@
 {
 	"application": {
 		"title": "Circles",
+		"footer_text": "Circles &copy; 2015 Campagne Lab",
 		"free_zone": {
 			"pages": [
 				{
@@ -38,7 +39,7 @@
 				{
 					"name": "about",
 					"title": "About",
-					"text": "This example application is built with <a href=\"http://www.meteorkitchen.com\" target=\"_blank\">Meteor Kitchen</a> - code generator for <a href=\"https://www.meteor.com\" target=\"_blank\">Meteor.js</a>",
+					"text": "The Circles application is built with <a href=\"http://www.meteorkitchen.com\" target=\"_blank\">Meteor Kitchen</a> - code generator and offered by <a href=\"https://www.campagnelab.org\" target=\"_blank\">Campagne Lab</a>",
 					"type": "page",
 					"template": "",
 					"custom_template": "",
@@ -316,8 +317,10 @@
 			{
 				"name": "project_empty",
 				"collection": "Projects",
-				"find_one": false,
-				"filter": {},
+				"filter": {
+					"_id": null
+				},
+				"find_one": true,
 				"options": {},
 				"related_queries": []
 			},
@@ -402,9 +405,9 @@
 											"name": "insert_new_project",
 											"query_name": "project_empty",
 											"mode": "insert",
-											"submit_route": "Circles",
-											"cancel_route": "Circles",
-											"back_route": "Circles",
+											"submit_route": "Circles.projects",
+											"cancel_route": "Circles.projects",
+											"back_route": "Circles.projects",
 											"type": "form",
 											"dest_selector": "",
 											"dest_position": "",
@@ -471,9 +474,9 @@
 											"name": "edit_project",
 											"query_name": "find_project",
 											"mode": "update",
-											"submit_route": "Circles",
-											"close_route": "Circles",
-											"back_route": "Circles",
+											"submit_route": "Circles.projects",
+											"close_route": "Circles.projects",
+											"back_route": "Circles.projects",
 											"type": "form",
 											"dest_selector": "",
 											"dest_position": "",
@@ -600,7 +603,6 @@
 			"mrt": []
 		},
 		"frontend": "bootstrap3",
-		"footer_text": "",
 		"roles": [],
 		"default_role": "",
 		"use_collection2": false,
