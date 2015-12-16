@@ -7,14 +7,13 @@
 		"theme": "bootswatch-paper",
 		"collections": [
 			{
-				"name": "Projects",
+				"name": "projects",
 				"type": "collection",
 				"fields": [
 					{
-						"name": "Name",
+						"name": "name",
 						"type": "string",
 						"required": true,
-						"show_in_read_only_form": false,
 						"title": "",
 						"default": "",
 						"min": "",
@@ -43,58 +42,22 @@
 						"join_fields": [],
 						"show_in_dataview": true,
 						"show_in_insert_form": true,
-						"show_in_update_form": true
+						"show_in_update_form": true,
+						"show_in_read_only_form": true
 					},
 					{
-						"name": "imported",
-						"title": "Module in the project",
-						"type": "string",
-						"required": true,
-						"show_in_read_only_form": false,
-						"default": "",
-						"min": "",
-						"max": "",
-						"format": "",
-						"searchable": true,
-						"sortable": true,
-						"exportable": false,
-						"input": "text",
-						"input_template": "",
-						"input_group_class": "",
-						"input_items": [],
-						"lookup_query_name": "",
-						"lookup_query_params": [],
-						"lookup_key": "",
-						"lookup_field": "",
-						"display_helper": "",
-						"array_item_type": "",
-						"crud_fields": [],
-						"crud_insert_title": "",
-						"file_collection": "",
-						"file_container": "",
-						"join_collection": "",
-						"join_collection_field": "",
-						"join_container": "",
-						"join_fields": [],
-						"show_in_dataview": true,
-						"show_in_insert_form": true,
-						"show_in_update_form": true
-					},
-					{
-						"name": "module",
+						"name": "moduleId",
 						"title": "Module",
 						"required": true,
 						"input": "select",
 						"lookup_query_name": "list_modules",
 						"lookup_field": "name",
 						"lookup_key": "_id",
-						"show_in_dataview": false,
-						"show_in_read_only_form": false,
-						"join_collection": "Modules",
+						"join_collection": "modules",
 						"join_fields": [
 							"name"
 						],
-						"join_container": "imported.name",
+						"join_container": "module",
 						"type": "string",
 						"default": "",
 						"min": "",
@@ -114,8 +77,10 @@
 						"file_collection": "",
 						"file_container": "",
 						"join_collection_field": "",
+						"show_in_dataview": true,
 						"show_in_insert_form": true,
-						"show_in_update_form": true
+						"show_in_update_form": true,
+						"show_in_read_only_form": true
 					}
 				],
 				"storage_adapters": [],
@@ -139,15 +104,14 @@
 				"after_remove_source_file": ""
 			},
 			{
-				"name": "Modules",
+				"name": "modules",
 				"type": "collection",
 				"fields": [
 					{
-						"name": "Name",
+						"name": "name",
 						"title": "Module name",
 						"type": "string",
 						"required": true,
-						"show_in_read_only_form": false,
 						"default": "",
 						"min": "",
 						"max": "",
@@ -175,13 +139,13 @@
 						"join_fields": [],
 						"show_in_dataview": true,
 						"show_in_insert_form": true,
-						"show_in_update_form": true
+						"show_in_update_form": true,
+						"show_in_read_only_form": true
 					},
 					{
-						"name": "Models",
+						"name": "models",
 						"type": "array",
 						"array_item_type": "string",
-						"show_in_read_only_form": false,
 						"title": "",
 						"default": "",
 						"min": "",
@@ -210,7 +174,8 @@
 						"join_fields": [],
 						"show_in_dataview": true,
 						"show_in_insert_form": true,
-						"show_in_update_form": true
+						"show_in_update_form": true,
+						"show_in_read_only_form": true
 					}
 				],
 				"storage_adapters": [],
@@ -237,7 +202,7 @@
 		"queries": [
 			{
 				"name": "project_empty",
-				"collection": "Projects",
+				"collection": "projects",
 				"filter": {
 					"_id": null
 				},
@@ -247,7 +212,7 @@
 			},
 			{
 				"name": "find_project",
-				"collection": "Projects",
+				"collection": "projects",
 				"find_one": true,
 				"filter": {
 					"_id": ":id"
@@ -269,7 +234,7 @@
 			},
 			{
 				"name": "module_empty",
-				"collection": "Modules",
+				"collection": "modules",
 				"filter": {
 					"_id": null
 				},
@@ -279,7 +244,7 @@
 			},
 			{
 				"name": "list_modules",
-				"collection": "Modules",
+				"collection": "modules",
 				"options": {
 					"sort": {
 						"name": 1
@@ -291,7 +256,7 @@
 			},
 			{
 				"name": "find_module",
-				"collection": "Modules",
+				"collection": "modules",
 				"find_one": true,
 				"filter": {
 					"_id": ":id"
