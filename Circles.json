@@ -484,6 +484,8 @@
 									"hidden_fields": []
 								}
 							],
+							"close_route": "projects",
+							"back_route": "projects",
 							"template": "",
 							"custom_template": "",
 							"class": "",
@@ -498,9 +500,7 @@
 							"text": "",
 							"container_class": "",
 							"route_params": [],
-							"close_route": "",
 							"close_route_params": [],
-							"back_route": "",
 							"back_route_params": [],
 							"roles": [],
 							"pages": [],
@@ -517,7 +517,7 @@
 							"route_params": [
 								"id"
 							],
-							"back_route": "Circles",
+							"back_route": "projects",
 							"type": "page",
 							"components": [
 								{
@@ -553,6 +553,7 @@
 									"hidden_fields": []
 								}
 							],
+							"close_route": "projects",
 							"template": "",
 							"custom_template": "",
 							"class": "",
@@ -566,7 +567,6 @@
 							"meta_title": "",
 							"text": "",
 							"container_class": "",
-							"close_route": "",
 							"close_route_params": [],
 							"back_route_params": [],
 							"roles": [],
@@ -754,13 +754,15 @@
 									"hidden_fields": []
 								}
 							],
+							"query_name": "module_empty",
+							"close_route": "modules",
+							"back_route": "modules",
 							"template": "",
 							"custom_template": "",
 							"class": "",
 							"title_icon_class": "",
 							"events_code": "",
 							"helpers_code": "",
-							"query_name": "module_empty",
 							"query_params": [],
 							"template_rendered_code": "",
 							"meta_description": "",
@@ -768,9 +770,7 @@
 							"text": "",
 							"container_class": "",
 							"route_params": [],
-							"close_route": "",
 							"close_route_params": [],
-							"back_route": "",
 							"back_route_params": [],
 							"roles": [],
 							"pages": [],
@@ -787,7 +787,7 @@
 							"route_params": [
 								"id"
 							],
-							"back_route": "Circles",
+							"back_route": "modules",
 							"type": "page",
 							"components": [
 								{
@@ -823,20 +823,20 @@
 									"hidden_fields": []
 								}
 							],
+							"query_name": "find_module",
+							"close_route": "modules",
 							"template": "",
 							"custom_template": "",
 							"class": "",
 							"title_icon_class": "",
 							"events_code": "",
 							"helpers_code": "",
-							"query_name": "",
 							"query_params": [],
 							"template_rendered_code": "",
 							"meta_description": "",
 							"meta_title": "",
 							"text": "",
 							"container_class": "",
-							"close_route": "",
 							"close_route_params": [],
 							"back_route_params": [],
 							"roles": [],
@@ -948,10 +948,6 @@
 			"meteor": [],
 			"mrt": []
 		},
-		"frontend": "bootstrap3",
-		"roles": [],
-		"default_role": "",
-		"use_collection2": false,
 		"free_zone": {
 			"type": "zone",
 			"components": [],
@@ -961,6 +957,10 @@
 			"navbar_class": "",
 			"footer_class": ""
 		},
+		"frontend": "bootstrap3",
+		"roles": [],
+		"default_role": "",
+		"use_collection2": false,
 		"login_with_password": true,
 		"send_verification_email": false,
 		"login_with_google": false,
