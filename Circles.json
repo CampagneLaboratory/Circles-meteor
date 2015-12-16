@@ -48,8 +48,7 @@
 					{
 						"name": "moduleId",
 						"title": "Module",
-						"required": true,
-						"input": "select",
+						"input": "select-multiple",
 						"lookup_query_name": "list_modules",
 						"lookup_field": "name",
 						"lookup_key": "_id",
@@ -57,11 +56,12 @@
 						"join_fields": [
 							"name"
 						],
-						"join_container": "module",
+						"join_container": "moduleName",
 						"type": "string",
 						"default": "",
 						"min": "",
 						"max": "",
+						"required": false,
 						"format": "",
 						"searchable": true,
 						"sortable": true,
