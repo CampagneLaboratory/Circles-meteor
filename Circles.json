@@ -143,12 +143,18 @@
 						"show_in_read_only_form": true
 					},
 					{
-						"name": "models",
-						"type": "array",
-						"array_item_type": "string",
-						"show_in_insert_form": false,
+						"name": "modelId",
+						"title": "Models",
 						"input": "select-multiple",
-						"title": "",
+						"lookup_query_name": "list_models",
+						"lookup_field": "name",
+						"lookup_key": "_id",
+						"join_collection": "models",
+						"join_fields": [
+							"name"
+						],
+						"join_container": "modelName",
+						"type": "string",
 						"default": "",
 						"min": "",
 						"max": "",
@@ -160,20 +166,16 @@
 						"input_template": "",
 						"input_group_class": "",
 						"input_items": [],
-						"lookup_query_name": "",
 						"lookup_query_params": [],
-						"lookup_key": "",
-						"lookup_field": "",
 						"display_helper": "",
+						"array_item_type": "",
 						"crud_fields": [],
 						"crud_insert_title": "",
 						"file_collection": "",
 						"file_container": "",
-						"join_collection": "",
 						"join_collection_field": "",
-						"join_container": "",
-						"join_fields": [],
 						"show_in_dataview": true,
+						"show_in_insert_form": true,
 						"show_in_update_form": true,
 						"show_in_read_only_form": true
 					}
@@ -302,6 +304,7 @@
 						"title": "model",
 						"type": "string",
 						"show_in_insert_form": false,
+						"show_in_update_form": false,
 						"default": "",
 						"min": "",
 						"max": "",
@@ -329,7 +332,6 @@
 						"join_container": "",
 						"join_fields": [],
 						"show_in_dataview": true,
-						"show_in_update_form": true,
 						"show_in_read_only_form": true
 					},
 					{
@@ -1449,7 +1451,7 @@
 							"name": "edit_model",
 							"title": "Edit Model",
 							"route_params": [
-								"id"
+								"modelId"
 							],
 							"back_route": "models",
 							"type": "page",
