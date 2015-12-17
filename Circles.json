@@ -301,6 +301,7 @@
 						"name": "modelId",
 						"title": "model",
 						"type": "string",
+						"show_in_insert_form": false,
 						"default": "",
 						"min": "",
 						"max": "",
@@ -328,19 +329,18 @@
 						"join_container": "",
 						"join_fields": [],
 						"show_in_dataview": true,
-						"show_in_insert_form": true,
 						"show_in_update_form": true,
 						"show_in_read_only_form": true
 					},
 					{
 						"name": "SVG",
 						"title": "SVG",
-						"type": "string",
 						"searchable": false,
 						"sortable": false,
 						"input": "textarea",
 						"show_in_dataview": false,
 						"show_in_read_only_form": false,
+						"type": "string",
 						"default": "",
 						"min": "",
 						"max": "",
@@ -481,7 +481,7 @@
 				"collection": "models",
 				"find_one": true,
 				"filter": {
-					"_id": ":id"
+					"_id": ":modelId"
 				},
 				"options": {},
 				"related_queries": []
@@ -513,7 +513,7 @@
 				"collection": "root_nodes",
 				"find_one": true,
 				"filter": {
-					"_id": ":id"
+					"_id": ":nodeId"
 				},
 				"options": {},
 				"related_queries": []
@@ -1048,13 +1048,13 @@
 							"type": "data_view",
 							"edit_route_params": [
 								{
-									"name": "id",
+									"name": "modelId",
 									"value": "this._id"
 								}
 							],
 							"details_route_params": [
 								{
-									"name": "id",
+									"name": "modelId",
 									"value": "this._id"
 								}
 							],
@@ -1083,14 +1083,14 @@
 							"name": "model_details",
 							"template": "page_subcontent_tabnav",
 							"route_params": [
-								"id"
+								"modelId"
 							],
 							"components": [
 								{
 									"name": "details_form",
 									"type": "form",
 									"mode": "read_only",
-									"title": "Model #{{find_model.name}}",
+									"title": "Model: {{find_model.name}}",
 									"layout": "horizontal",
 									"query_name": "find_model",
 									"back_route": "models",
@@ -1121,9 +1121,244 @@
 							],
 							"force_yield_subpages": true,
 							"type": "page",
+							"pages": [
+								{
+									"name": "nodes",
+									"components": [
+										{
+											"name": "view",
+											"type": "data_view",
+											"text_if_empty": "No root nodes in the model",
+											"query_name": "find_nodes_model",
+											"insert_button_title": "Add node",
+											"insert_route": "models.model_details.insert",
+											"insert_route_params": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"edit_route": "models.model_details.edit",
+											"edit_route_params": [
+												{
+													"name": "modelId",
+													"value": "UI._parentData(1).params.modelId"
+												},
+												{
+													"name": "nodeId",
+													"value": "this._id"
+												}
+											],
+											"dest_selector": "",
+											"dest_position": "",
+											"class": "",
+											"title": "",
+											"title_icon_class": "",
+											"events_code": "",
+											"helpers_code": "",
+											"query_params": [],
+											"components": [],
+											"template_rendered_code": "",
+											"text_if_not_found": "",
+											"details_route": "",
+											"delete_route": "",
+											"details_route_params": [],
+											"delete_route_params": [],
+											"views": [],
+											"fields": []
+										}
+									],
+									"type": "page",
+									"template": "",
+									"custom_template": "",
+									"class": "",
+									"title": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_name": "",
+									"query_params": [],
+									"template_rendered_code": "",
+									"meta_description": "",
+									"meta_title": "",
+									"text": "",
+									"container_class": "",
+									"route_params": [],
+									"close_route": "",
+									"close_route_params": [],
+									"back_route": "",
+									"back_route_params": [],
+									"roles": [],
+									"pages": [],
+									"related_queries": [],
+									"force_yield_subpages": false,
+									"zoneless": false,
+									"parent_layout": false,
+									"controller_before_action": "",
+									"controller_after_action": ""
+								},
+								{
+									"name": "insert",
+									"components": [
+										{
+											"name": "insert_form",
+											"type": "form",
+											"mode": "insert",
+											"title": "Add node",
+											"query_name": "root_nodes_empty",
+											"hidden_fields": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"submit_route": "models.model_details",
+											"submit_route_params": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"cancel_route": "models.model_details",
+											"cancel_route_params": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"dest_selector": "",
+											"dest_position": "",
+											"class": "",
+											"title_icon_class": "",
+											"events_code": "",
+											"helpers_code": "",
+											"query_params": [],
+											"components": [],
+											"template_rendered_code": "",
+											"layout": "default",
+											"close_route": "",
+											"back_route": "",
+											"submit_code": "",
+											"cancel_code": "",
+											"submit_button_title": "",
+											"cancel_button_title": "",
+											"close_button_title": "",
+											"close_route_params": [],
+											"back_route_params": [],
+											"fields": []
+										}
+									],
+									"type": "page",
+									"template": "",
+									"custom_template": "",
+									"class": "",
+									"title": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_name": "",
+									"query_params": [],
+									"template_rendered_code": "",
+									"meta_description": "",
+									"meta_title": "",
+									"text": "",
+									"container_class": "",
+									"route_params": [],
+									"close_route": "",
+									"close_route_params": [],
+									"back_route": "",
+									"back_route_params": [],
+									"roles": [],
+									"pages": [],
+									"related_queries": [],
+									"force_yield_subpages": false,
+									"zoneless": false,
+									"parent_layout": false,
+									"controller_before_action": "",
+									"controller_after_action": ""
+								},
+								{
+									"name": "edit",
+									"route_params": [
+										"modelId",
+										"nodeId"
+									],
+									"components": [
+										{
+											"name": "edit_form",
+											"type": "form",
+											"mode": "update",
+											"title": "Edit node",
+											"query_name": "find_node",
+											"submit_route": "models.model_details",
+											"submit_route_params": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"cancel_route": "models.model_details",
+											"cancel_route_params": [
+												{
+													"name": "modelId",
+													"value": "this.params.modelId"
+												}
+											],
+											"dest_selector": "",
+											"dest_position": "",
+											"class": "",
+											"title_icon_class": "",
+											"events_code": "",
+											"helpers_code": "",
+											"query_params": [],
+											"components": [],
+											"template_rendered_code": "",
+											"layout": "default",
+											"close_route": "",
+											"back_route": "",
+											"submit_code": "",
+											"cancel_code": "",
+											"submit_button_title": "",
+											"cancel_button_title": "",
+											"close_button_title": "",
+											"close_route_params": [],
+											"back_route_params": [],
+											"fields": [],
+											"hidden_fields": []
+										}
+									],
+									"type": "page",
+									"template": "",
+									"custom_template": "",
+									"class": "",
+									"title": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_name": "",
+									"query_params": [],
+									"template_rendered_code": "",
+									"meta_description": "",
+									"meta_title": "",
+									"text": "",
+									"container_class": "",
+									"close_route": "",
+									"close_route_params": [],
+									"back_route": "",
+									"back_route_params": [],
+									"roles": [],
+									"pages": [],
+									"related_queries": [],
+									"force_yield_subpages": false,
+									"zoneless": false,
+									"parent_layout": false,
+									"controller_before_action": "",
+									"controller_after_action": ""
+								}
+							],
+							"title": "Model details",
 							"custom_template": "",
 							"class": "",
-							"title": "",
 							"title_icon_class": "",
 							"events_code": "",
 							"helpers_code": "",
@@ -1139,7 +1374,6 @@
 							"back_route": "",
 							"back_route_params": [],
 							"roles": [],
-							"pages": [],
 							"related_queries": [],
 							"zoneless": false,
 							"parent_layout": false,
