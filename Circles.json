@@ -451,7 +451,7 @@
 				"collection": "modules",
 				"find_one": true,
 				"filter": {
-					"_id": ":id"
+					"_id": ":moduleId"
 				},
 				"options": {},
 				"related_queries": []
@@ -851,10 +851,17 @@
 							"type": "data_view",
 							"edit_route_params": [
 								{
-									"name": "id",
+									"name": "moduleId",
 									"value": "this._id"
 								}
 							],
+							"details_route_params": [
+								{
+									"name": "moduleId",
+									"value": "this._id"
+								}
+							],
+							"details_route": "modules.module_details",
 							"dest_selector": "",
 							"dest_position": "",
 							"class": "",
@@ -866,10 +873,8 @@
 							"components": [],
 							"template_rendered_code": "",
 							"text_if_not_found": "",
-							"details_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
-							"details_route_params": [],
 							"delete_route_params": [],
 							"insert_button_title": "",
 							"views": [],
@@ -877,6 +882,73 @@
 						}
 					],
 					"pages": [
+						{
+							"name": "module_details",
+							"template": "page_subcontent_tabnav",
+							"route_params": [
+								"moduleId"
+							],
+							"components": [
+								{
+									"name": "details_form",
+									"type": "form",
+									"mode": "read_only",
+									"title": "Module: {{find_module.name}}",
+									"layout": "horizontal",
+									"query_name": "find_module",
+									"back_route": "modules",
+									"dest_selector": "",
+									"dest_position": "",
+									"class": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_params": [],
+									"components": [],
+									"template_rendered_code": "",
+									"submit_route": "",
+									"cancel_route": "",
+									"close_route": "",
+									"submit_code": "",
+									"cancel_code": "",
+									"submit_button_title": "",
+									"cancel_button_title": "",
+									"close_button_title": "",
+									"submit_route_params": [],
+									"cancel_route_params": [],
+									"close_route_params": [],
+									"back_route_params": [],
+									"fields": [],
+									"hidden_fields": []
+								}
+							],
+							"force_yield_subpages": true,
+							"type": "page",
+							"custom_template": "",
+							"class": "",
+							"title": "",
+							"title_icon_class": "",
+							"events_code": "",
+							"helpers_code": "",
+							"query_name": "",
+							"query_params": [],
+							"template_rendered_code": "",
+							"meta_description": "",
+							"meta_title": "",
+							"text": "",
+							"container_class": "",
+							"close_route": "",
+							"close_route_params": [],
+							"back_route": "",
+							"back_route_params": [],
+							"roles": [],
+							"pages": [],
+							"related_queries": [],
+							"zoneless": false,
+							"parent_layout": false,
+							"controller_before_action": "",
+							"controller_after_action": ""
+						},
 						{
 							"name": "insert_module",
 							"title": "New Module",
@@ -946,7 +1018,7 @@
 							"name": "edit_module",
 							"title": "Edit Module",
 							"route_params": [
-								"id"
+								"moduleId"
 							],
 							"back_route": "modules",
 							"type": "page",
@@ -1151,6 +1223,17 @@
 													"value": "this._id"
 												}
 											],
+											"details_route_params": [
+												{
+													"name": "modelId",
+													"value": "UI._parentData(1).params.modelId"
+												},
+												{
+													"name": "nodeId",
+													"value": "this._id"
+												}
+											],
+											"details_route": "models.model_details.show_node",
 											"dest_selector": "",
 											"dest_position": "",
 											"class": "",
@@ -1162,9 +1245,7 @@
 											"components": [],
 											"template_rendered_code": "",
 											"text_if_not_found": "",
-											"details_route": "",
 											"delete_route": "",
-											"details_route_params": [],
 											"delete_route_params": [],
 											"views": [],
 											"fields": []
@@ -1186,6 +1267,40 @@
 									"text": "",
 									"container_class": "",
 									"route_params": [],
+									"close_route": "",
+									"close_route_params": [],
+									"back_route": "",
+									"back_route_params": [],
+									"roles": [],
+									"pages": [],
+									"related_queries": [],
+									"force_yield_subpages": false,
+									"zoneless": false,
+									"parent_layout": false,
+									"controller_before_action": "",
+									"controller_after_action": ""
+								},
+								{
+									"name": "show_node",
+									"route_params": [
+										"nodeId"
+									],
+									"title": "SVG rendering",
+									"type": "page",
+									"template": "",
+									"custom_template": "",
+									"class": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_name": "",
+									"query_params": [],
+									"components": [],
+									"template_rendered_code": "",
+									"meta_description": "",
+									"meta_title": "",
+									"text": "",
+									"container_class": "",
 									"close_route": "",
 									"close_route_params": [],
 									"back_route": "",
