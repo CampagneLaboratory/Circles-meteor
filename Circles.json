@@ -1287,6 +1287,20 @@
 									],
 									"title": "SVG rendering",
 									"type": "page",
+									"components": [
+										{
+											"name": "renderSVG",
+											"html": "<template name=\"SVGTemplate\">\n  <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n   \n  </svg>\n</template>",
+											"js": "Template.SVGTemplate.onRendered(function() {\n    var s = Snap(\"#svg\");\n    console.log(\"Inside onRendered\");                                        \n    var f = Snap.parse(Session.get('svg_fragment'));                                               \n    s.append(f);                                                                 \n    console.log(\"Fragment appended\"); \n    console.log(s.innerSVG());\n});\n\n",
+											"query_name": "find_node",
+											"type": "custom_component",
+											"custom_template": "",
+											"dest_selector": "",
+											"dest_position": "",
+											"query_params": [],
+											"components": []
+										}
+									],
 									"template": "",
 									"custom_template": "",
 									"class": "",
@@ -1295,7 +1309,6 @@
 									"helpers_code": "",
 									"query_name": "",
 									"query_params": [],
-									"components": [],
 									"template_rendered_code": "",
 									"meta_description": "",
 									"meta_title": "",
