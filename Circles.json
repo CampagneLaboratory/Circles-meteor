@@ -1290,8 +1290,8 @@
 									"components": [
 										{
 											"name": "renderSVG",
-											"html": "<template name=\"SVGTemplate\">\n  <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\">\n   \n  </svg>\n</template>",
-											"js": "Template.SVGTemplate.onRendered(function() {\n    var s = Snap(\"#svg\");\n    console.log(\"Inside onRendered\");                                        \n    var f = Snap.parse(Session.get('svg_fragment'));                                               \n    s.append(f);                                                                 \n    console.log(\"Fragment appended\"); \n    console.log(s.innerSVG());\n});\n\n",
+											"html": "<template name=\"SVGTemplate\">\n   <div class=\"alert alert-success\"> {{find_node.name}} </div>\n   <p>{{find_node.SVG}}</p>                              \n</template>",
+											"js": "Template.SVGTemplate.onRendered(function() {\n    var s = Snap(\"#svg\");\n    console.log(\"Inside onRendered\");                                        \n    var f = Snap.parse(Models.findOne({_id:this.params.nodeId}, {}).SVG);                                               \n    s.append(f);                                                                 \n    console.log(\"Fragment appended\"); \n    console.log(s.innerSVG());\n});\n",
 											"query_name": "find_node",
 											"type": "custom_component",
 											"custom_template": "",
