@@ -9,6 +9,4 @@ meteor-kitchen ~/Downloads/Circles.json ../Circles
 mv -f  ~/Downloads/Circles.json .
 cd ../Circles
 meteor add jeremy:snapsvg
-export MONGO_URL=mongodb://localhost:27017/circles
-meteor --port 2000
 
