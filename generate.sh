@@ -1,7 +1,7 @@
 #save the state of the app (db)
 #cp -r ../Circles/.meteor .
 rm -rf ../Circles
-meteor-kitchen ~/Downloads/Circles.json ../Circles
+meteor-kitchen ./Circles.json ../Circles
 #restore the previous state
 #rm -rf ../Circles/.meteor
 #mv -f .meteor ../Circles
