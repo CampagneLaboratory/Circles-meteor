@@ -715,7 +715,6 @@
 							"name": "View ",
 							"query_name": "list_projects",
 							"text_if_empty": "No project here",
-							"edit_route": "projects.edit_project",
 							"type": "data_view",
 							"edit_route_params": [
 								{
@@ -742,6 +741,7 @@
 							"template_rendered_code": "",
 							"text_if_not_found": "",
 							"insert_route": "",
+							"edit_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -986,7 +986,6 @@
 							"name": "View ",
 							"query_name": "list_modules",
 							"text_if_empty": "No module here",
-							"edit_route": "modules.edit_module",
 							"type": "data_view",
 							"edit_route_params": [
 								{
@@ -1013,6 +1012,7 @@
 							"template_rendered_code": "",
 							"text_if_not_found": "",
 							"insert_route": "",
+							"edit_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -1257,7 +1257,6 @@
 							"name": "View ",
 							"query_name": "list_models",
 							"text_if_empty": "No model here",
-							"edit_route": "models.edit_model",
 							"type": "data_view",
 							"edit_route_params": [
 								{
@@ -1284,6 +1283,7 @@
 							"template_rendered_code": "",
 							"text_if_not_found": "",
 							"insert_route": "",
+							"edit_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -1350,7 +1350,6 @@
 													"value": "this.params.modelId"
 												}
 											],
-											"edit_route": "models.model_details.edit",
 											"edit_route_params": [
 												{
 													"name": "modelId",
@@ -1384,6 +1383,7 @@
 											"template_rendered_code": "",
 											"text_if_not_found": "",
 											"insert_route": "",
+											"edit_route": "",
 											"delete_route": "",
 											"delete_route_params": [],
 											"insert_button_title": "",
