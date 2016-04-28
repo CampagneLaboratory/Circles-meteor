@@ -715,7 +715,6 @@
 							"name": "View ",
 							"query_name": "list_projects",
 							"text_if_empty": "No project here",
-							"insert_route": "projects.insert_project",
 							"edit_route": "projects.edit_project",
 							"type": "data_view",
 							"edit_route_params": [
@@ -742,6 +741,7 @@
 							"components": [],
 							"template_rendered_code": "",
 							"text_if_not_found": "",
+							"insert_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -986,7 +986,6 @@
 							"name": "View ",
 							"query_name": "list_modules",
 							"text_if_empty": "No module here",
-							"insert_route": "modules.insert_module",
 							"edit_route": "modules.edit_module",
 							"type": "data_view",
 							"edit_route_params": [
@@ -1013,6 +1012,7 @@
 							"components": [],
 							"template_rendered_code": "",
 							"text_if_not_found": "",
+							"insert_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -1257,7 +1257,6 @@
 							"name": "View ",
 							"query_name": "list_models",
 							"text_if_empty": "No model here",
-							"insert_route": "models.insert_model",
 							"edit_route": "models.edit_model",
 							"type": "data_view",
 							"edit_route_params": [
@@ -1284,6 +1283,7 @@
 							"components": [],
 							"template_rendered_code": "",
 							"text_if_not_found": "",
+							"insert_route": "",
 							"delete_route": "",
 							"insert_route_params": [],
 							"delete_route_params": [],
@@ -1344,8 +1344,6 @@
 											"type": "data_view",
 											"text_if_empty": "No root nodes in the model",
 											"query_name": "find_nodes_model",
-											"insert_button_title": "Add node",
-											"insert_route": "models.model_details.insert",
 											"insert_route_params": [
 												{
 													"name": "modelId",
@@ -1385,8 +1383,10 @@
 											"components": [],
 											"template_rendered_code": "",
 											"text_if_not_found": "",
+											"insert_route": "",
 											"delete_route": "",
 											"delete_route_params": [],
+											"insert_button_title": "",
 											"views": [],
 											"fields": []
 										}
