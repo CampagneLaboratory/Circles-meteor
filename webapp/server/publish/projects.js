@@ -7,6 +7,6 @@ Meteor.publish("find_project", function(id) {
 });
 
 Meteor.publish("list_projects", function() {
-	return Projects.publishJoinedCursors(Projects.find({}, {sort:{name:1}}));
+	return Projects.publishJoinedCursors(Projects.find({},{fields:{name:1, createdBy:1}},  {sort:{name:1}}));
 });
 
