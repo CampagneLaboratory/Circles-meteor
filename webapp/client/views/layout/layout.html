@@ -1,0 +1,159 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Circles
+	</title>
+</head>
+<template name="layout">
+	{{#if currentUser}}
+		{{> PrivateLayout}}
+	{{else}}
+		{{> PublicLayout}}
+	{{/if}}
+</template>
+
+<template name="FreeLayout">
+	<div id="content" class="sticky-wrapper">
+		<div id="navbar" class="navbar navbar-fixed-top navbar-default" role="navigation">
+			<div class="navbar-container container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">
+							Toggle navigation
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+					</button>
+					<a class="navbar-brand" href="#">
+						Circles
+					</a>
+				</div>
+				<div id="menu" class="collapse navbar-collapse">
+				</div>
+			</div>
+		</div>
+		<div class="navbar-spacer">
+		</div>
+		{{> yield}}
+	</div>
+	<div id="footer" class="sticky-footer">
+		<div class="footer-container container">
+			<p class="text-muted">
+				Circles &copy; 2016 Campagne Lab
+			</p>
+		</div>
+	</div>
+</template>
+
+<template name="PublicLayout">
+	<div id="content" class="sticky-wrapper">
+		<div id="navbar" class="navbar navbar-fixed-top navbar-default" role="navigation">
+			<div class="navbar-container container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">
+							Toggle navigation
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+					</button>
+					<a class="navbar-brand" href="#">
+						Circles
+					</a>
+				</div>
+				<div id="menu" class="collapse navbar-collapse">
+					{{> PublicLayoutLeftMenu}}
+				</div>
+			</div>
+		</div>
+		<div class="navbar-spacer">
+		</div>
+		{{> yield}}
+	</div>
+	<div id="footer" class="sticky-footer">
+		<div class="footer-container container">
+			<p class="text-muted">
+				Circles &copy; 2016 Campagne Lab
+			</p>
+		</div>
+	</div>
+</template>
+
+<template name="PublicLayoutLeftMenu">
+	<ul id="menu-items" class="nav navbar-nav">
+		<li id="menu-item-simple" class="{{menuItemClass 'home'}}">
+			<a href="{{pathFor 'home'}}">
+				<span class="item-title">
+					Home
+				</span>
+			</a>
+		</li>
+		<li id="menu-item-simple" class="{{menuItemClass 'projects'}}">
+			<a href="{{pathFor 'projects'}}">
+				<span class="item-title">
+					Projects
+				</span>
+			</a>
+		</li>
+		<li id="menu-item-simple" class="{{menuItemClass 'modules'}}">
+			<a href="{{pathFor 'modules'}}">
+				<span class="item-title">
+					Modules
+				</span>
+			</a>
+		</li>
+		<li id="menu-item-simple" class="{{menuItemClass 'models'}}">
+			<a href="{{pathFor 'models'}}">
+				<span class="item-title">
+					Models
+				</span>
+			</a>
+		</li>
+	</ul>
+</template>
+
+<template name="PrivateLayout">
+	<div id="content" class="sticky-wrapper">
+		<div id="navbar" class="navbar navbar-fixed-top navbar-default" role="navigation">
+			<div class="navbar-container container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">
+							Toggle navigation
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+						<span class="icon-bar">
+						</span>
+					</button>
+					<a class="navbar-brand" href="#">
+						Circles
+					</a>
+				</div>
+				<div id="menu" class="collapse navbar-collapse">
+				</div>
+			</div>
+		</div>
+		<div class="navbar-spacer">
+		</div>
+		{{> yield}}
+	</div>
+	<div id="footer" class="sticky-footer">
+		<div class="footer-container container">
+			<p class="text-muted">
+				Circles &copy; 2016 Campagne Lab
+			</p>
+		</div>
+	</div>
+</template>
+
