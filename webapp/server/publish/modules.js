@@ -3,7 +3,7 @@ Meteor.publish("module_empty", function() {
 });
 
 Meteor.publish("list_modules", function() {
-	return Modules.publishJoinedCursors(Modules.find({}, {sort:{name:1}}));
+	return Modules.publishJoinedCursors(Modules.find({}, {fields:{name:1, createdBy:1}}, {sort:{name:1}}));
 });
 
 Meteor.publish("find_module", function(moduleId) {

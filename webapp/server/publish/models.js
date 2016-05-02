@@ -7,6 +7,6 @@ Meteor.publish("list_models", function() {
 });
 
 Meteor.publish("find_model", function(modelId) {
-	return Models.find({_id:modelId}, {});
+	return Models.find({_id:modelId}, {fields:{name:1, createdBy:1}}, {});
 });
 
