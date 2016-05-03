@@ -36,7 +36,7 @@ this.ModelsModelDetailsNodesController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			find_nodes_model: RootNodes.find({modelId:this.params.modelId}, {}),
+			find_nodes_model: RootNodes.find({modelId:this.params.modelId},{fields:{name:1, createdBy:1}}, {}),
 			find_model: Models.findOne({_id:this.params.modelId}, {})
 		};
 		

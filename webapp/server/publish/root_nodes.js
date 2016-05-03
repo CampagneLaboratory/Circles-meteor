@@ -11,6 +11,6 @@ Meteor.publish("find_node", function(nodeId) {
 });
 
 Meteor.publish("find_nodes_model", function(modelId) {
-	return RootNodes.find({modelId:modelId}, {});
+	return RootNodes.find({modelId:modelId},{fields:{name:1, createdBy:1,modelId:1}}, {});
 });
 
