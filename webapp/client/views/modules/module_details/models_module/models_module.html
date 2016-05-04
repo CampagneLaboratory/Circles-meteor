@@ -51,8 +51,11 @@
 		<thead id="dataview-table-header">
 			<tr id="dataview-table-header-row">
 				<th class="th-sortable" data-sort="name">
-					Model name
+					Models in the module
 				</th>
+                <th class="th-sortable" data-sort="createdBy">
+                    Publisher
+                </th>
 			</tr>
 		</thead>
 		<tbody id="dataview-table-items">
@@ -66,6 +69,9 @@
 		<td>
 			{{name}}
 		</td>
+        <td>
+            {{createdBy}}
+        </td>
 	</tr>
 </template>
 
