@@ -994,7 +994,7 @@
 											"text_if_empty": "No model here",
 											"text_if_not_found": "No model here",
 											"insert_route": "",
-											"details_route": "",
+											"details_route": "models.model_details",
 											"edit_route": "",
 											"delete_route": "",
 											"insert_button_title": "",
@@ -1003,7 +1003,12 @@
 											"query_params": [],
 											"components": [],
 											"insert_route_params": [],
-											"details_route_params": [],
+											"details_route_params": [
+												{
+													"name": "modelId",
+													"value": "this._id"
+												}
+											],
 											"edit_route_params": [],
 											"delete_route_params": [],
 											"fields": []
