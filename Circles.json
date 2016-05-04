@@ -407,7 +407,7 @@
 				"collection": "projects",
 				"find_one": true,
 				"filter": {
-					"_id": ":id"
+					"_id": ":projectId"
 				},
 				"options": {},
 				"related_queries": []
@@ -539,6 +539,16 @@
 				},
 				"options": {},
 				"related_queries": []
+			},
+			{
+				"name": "find_modules_project",
+				"collection": "modules",
+				"find_one": false,
+				"filter": {
+					"projectId": ":projectId"
+				},
+				"options": {},
+				"related_queries": []
 			}
 		],
 		"public_zone": {
@@ -585,8 +595,8 @@
 							"name": "View ",
 							"query_name": "list_projects",
 							"text_if_empty": "No project here",
-							"insert_route": "projects.insert_project",
-							"edit_route": "projects.edit_project",
+							"insert_route": "",
+							"edit_route": "",
 							"type": "data_view",
 							"edit_route_params": [
 								{
@@ -596,7 +606,7 @@
 							],
 							"details_route_params": [
 								{
-									"name": "id",
+									"name": "projectId",
 									"value": "this._id"
 								}
 							],
@@ -625,7 +635,7 @@
 							"name": "project_details",
 							"template": "page_subcontent_tabnav",
 							"route_params": [
-								"id"
+								"projectId"
 							],
 							"components": [
 								{
@@ -681,7 +691,74 @@
 							"back_route": "",
 							"back_route_params": [],
 							"roles": [],
-							"pages": [],
+							"pages": [
+								{
+									"name": "modules_project",
+									"template": "",
+									"custom_template": "",
+									"class": "",
+									"title": "",
+									"title_icon_class": "",
+									"events_code": "",
+									"helpers_code": "",
+									"query_name": "",
+									"template_rendered_code": "",
+									"meta_description": "",
+									"meta_title": "",
+									"text": "",
+									"container_class": "",
+									"route_params": [],
+									"close_route": "",
+									"back_route": "",
+									"roles": [],
+									"force_yield_subpages": false,
+									"zoneless": false,
+									"parent_layout": false,
+									"controller_before_action": "",
+									"controller_after_action": "",
+									"type": "page",
+									"query_params": [],
+									"components": [
+										{
+											"name": "modules_project_view",
+											"dest_selector": "",
+											"dest_position": "",
+											"class": "",
+											"title": "",
+											"title_icon_class": "",
+											"events_code": "",
+											"helpers_code": "",
+											"query_name": "find_modules_project",
+											"template_rendered_code": "",
+											"text_if_empty": "No module here",
+											"text_if_not_found": "No module here",
+											"insert_route": "",
+											"details_route": "modules.module_details",
+											"edit_route": "",
+											"delete_route": "",
+											"insert_button_title": "",
+											"views": [],
+											"type": "data_view",
+											"query_params": [],
+											"components": [],
+											"insert_route_params": [],
+											"details_route_params": [
+												{
+													"name": "moduleId",
+													"value": "this._id"
+												}
+											],
+											"edit_route_params": [],
+											"delete_route_params": [],
+											"fields": []
+										}
+									],
+									"close_route_params": [],
+									"back_route_params": [],
+									"pages": [],
+									"related_queries": []
+								}
+							],
 							"related_queries": [],
 							"zoneless": false,
 							"parent_layout": false,
