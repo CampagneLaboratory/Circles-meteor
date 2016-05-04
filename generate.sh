@@ -6,7 +6,7 @@ meteor-kitchen ./Circles.json ../Circles
 #rm -rf ../Circles/.meteor
 #mv -f .meteor ../Circles
 #rm -rf .meteor
-mv -f  ~/Downloads/Circles.json .
+#mv -f  ~/Downloads/Circles.json .
 cd ../Circles
 meteor add jeremy:snapsvg
 
