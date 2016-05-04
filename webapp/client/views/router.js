@@ -10,6 +10,7 @@ var publicRoutes = [
 	"home",
 	"projects",
 	"projects.project_details",
+	"projects.project_details.modules_project",
 	"projects.insert_project",
 	"projects.edit_project",
 	"modules",
@@ -183,7 +184,8 @@ Router.map(function () {
 
 	this.route("home", {path: "/", controller: "HomeController"});
 	this.route("projects", {path: "/projects", controller: "ProjectsController"});
-	this.route("projects.project_details", {path: "/projects/project_details/:id", controller: "ProjectsProjectDetailsController"});
+	this.route("projects.project_details", {path: "/projects/project_details/:projectId", controller: "ProjectsProjectDetailsController"});
+	this.route("projects.project_details.modules_project", {path: "/projects/project_details/:projectId/modules_project", controller: "ProjectsProjectDetailsModulesProjectController"});
 	this.route("projects.insert_project", {path: "/projects/insert_project", controller: "ProjectsInsertProjectController"});
 	this.route("projects.edit_project", {path: "/projects/edit_project/:id", controller: "ProjectsEditProjectController"});
 	this.route("modules", {path: "/modules", controller: "ModulesController"});

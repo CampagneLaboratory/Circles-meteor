@@ -10,3 +10,6 @@ Meteor.publish("find_module", function(moduleId) {
 	return Modules.publishJoinedCursors(Modules.find({_id:moduleId}, {}));
 });
 
+Meteor.publish("find_modules_project", function(projectId) {
+	return Modules.publishJoinedCursors(Modules.find({projectId:projectId}, {}));
+});

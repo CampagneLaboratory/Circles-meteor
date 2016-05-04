@@ -17,6 +17,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12" id="subcontent">
+				{{> yield region='ProjectsProjectDetailsSubcontent'}}
 			</div>
 		</div>
 	</div>
@@ -36,8 +37,8 @@
 			<div class="alert alert-warning">
 				{{errorMessage}}
 			</div>
-			{{/if}}
-
+			{{/if}}		
+		
 			{{#if infoMessage}}
 			<div class="alert alert-success">
 				{{infoMessage}}

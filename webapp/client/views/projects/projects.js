@@ -1,15 +1,15 @@
 var pageSession = new ReactiveDict();
 
 Template.Projects.rendered = function() {
-	
+
 };
 
 Template.Projects.events({
-	
+
 });
 
 Template.Projects.helpers({
-	
+
 });
 
 var ProjectsViewItems = function(cursor) {
@@ -73,7 +73,7 @@ var ProjectsViewExport = function(cursor, fileType) {
 
 Template.ProjectsView.rendered = function() {
 	pageSession.set("ProjectsViewStyle", "table");
-	
+
 };
 
 Template.ProjectsView.events({
@@ -155,7 +155,7 @@ Template.ProjectsView.events({
 		ProjectsViewExport(this.list_projects, "json");
 	}
 
-	
+
 });
 
 Template.ProjectsView.helpers({
@@ -186,12 +186,12 @@ Template.ProjectsView.helpers({
 		return pageSession.get("ProjectsViewStyle") == "gallery";
 	}
 
-	
+
 });
 
 
 Template.ProjectsViewTable.rendered = function() {
-	
+
 };
 
 Template.ProjectsViewTable.events({
@@ -218,14 +218,13 @@ Template.ProjectsViewTable.helpers({
 
 
 Template.ProjectsViewTableItems.rendered = function() {
-	
+
 };
 
 Template.ProjectsViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
-		
-		Router.go("projects.project_details", {id: this._id});
+		Router.go("projects.project_details", {projectId: this._id});
 		return false;
 	},
 
@@ -276,7 +275,7 @@ Template.ProjectsViewTableItems.events({
 });
 
 Template.ProjectsViewTableItems.helpers({
-	"checked": function(value) { return value ? "checked" : "" }, 
+	"checked": function(value) { return value ? "checked" : "" },
 	"editButtonClass": function() {
 		return Projects.userCanUpdate(Meteor.userId(), this) ? "" : "hidden";
 	},

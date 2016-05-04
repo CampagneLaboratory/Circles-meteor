@@ -1,6 +1,6 @@
 this.ProjectsController = RouteController.extend({
 	template: "Projects",
-	
+
 
 	yieldTemplates: {
 		/*YIELD_TEMPLATES*/
@@ -16,7 +16,7 @@ this.ProjectsController = RouteController.extend({
 	},
 
 	isReady: function() {
-		
+
 
 		var subs = [
 			Meteor.subscribe("list_projects")
@@ -30,20 +30,16 @@ this.ProjectsController = RouteController.extend({
 	},
 
 	data: function() {
-		
 
-		var data = {
+
+		return {
 			params: this.params || {},
 			list_projects: Projects.find({}, {sort:{name:1}})
 		};
-		
-
-		
-
-		return data;
+		/*DATA_FUNCTION*/
 	},
 
 	onAfterAction: function() {
-		
+
 	}
 });

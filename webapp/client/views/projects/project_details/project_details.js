@@ -1,19 +1,19 @@
 var pageSession = new ReactiveDict();
 
 Template.ProjectsProjectDetails.rendered = function() {
-	
+
 };
 
 Template.ProjectsProjectDetails.events({
-	
+
 });
 
 Template.ProjectsProjectDetails.helpers({
-	
+
 });
 
 Template.ProjectsProjectDetailsDetailsForm.rendered = function() {
-	
+
 
 	pageSession.set("projectsProjectDetailsDetailsFormInfoMessage", "");
 	pageSession.set("projectsProjectDetailsDetailsFormErrorMessage", "");
@@ -85,9 +85,9 @@ Template.ProjectsProjectDetailsDetailsForm.events({
 
 			},
 			function(values) {
-				
 
-				
+
+
 			}
 		);
 
@@ -96,7 +96,7 @@ Template.ProjectsProjectDetailsDetailsForm.events({
 	"click #form-cancel-button": function(e, t) {
 		e.preventDefault();
 
-		
+
 
 		/*CANCEL_REDIRECT*/
 	},
@@ -111,7 +111,7 @@ Template.ProjectsProjectDetailsDetailsForm.events({
 		Router.go("projects", {});
 	}
 
-	
+
 });
 
 Template.ProjectsProjectDetailsDetailsForm.helpers({
@@ -121,5 +121,5 @@ Template.ProjectsProjectDetailsDetailsForm.helpers({
 	"errorMessage": function() {
 		return pageSession.get("projectsProjectDetailsDetailsFormErrorMessage");
 	}
-	
+
 });
