@@ -109,7 +109,7 @@ Meteor.startup(function() {
 		}
 	}
 
-	
+
 });
 
 Meteor.methods({
@@ -163,15 +163,6 @@ Meteor.methods({
 		}
 
 		if(userOptions) {
-			for(var key in userOptions) {
-				var obj = userOptions[key];
-				if(_.isObject(obj)) {
-					for(var k in obj) {
-						userOptions[key + "." + k] = obj[k];
-					}
-					delete userOptions[key];
-				}
-			}
 			Users.update(userId, { $set: userOptions });
 		}
 
@@ -194,7 +185,7 @@ Accounts.onCreateUser(function (options, user) {
 		user.profile = options.profile;
 	}
 
-	
+
 	return user;
 });
 
@@ -205,9 +196,9 @@ Accounts.validateLoginAttempt(function(info) {
 		throw new Meteor.Error(403, "Your account is blocked.");
 	}
 
-  if(verifyEmail && info.user && info.user.emails && info.user.emails.length && !info.user.emails[0].verified ) {
-			throw new Meteor.Error(499, "E-mail not verified.");
-  }
+	if(verifyEmail && info.user && info.user.emails && info.user.emails.length && !info.user.emails[0].verified ) {
+		throw new Meteor.Error(499, "E-mail not verified.");
+	}
 
 	return true;
 });
@@ -286,7 +277,7 @@ Users.before.update(function(userId, doc, fieldNames, modifier, options) {
 });
 
 Accounts.onLogin(function (info) {
-	
+
 });
 
 Accounts.urls.resetPassword = function (token) {

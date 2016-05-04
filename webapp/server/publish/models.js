@@ -10,3 +10,6 @@ Meteor.publish("find_model", function(modelId) {
 	return Models.find({_id:modelId}, {fields:{name:1, createdBy:1}}, {});
 });
 
+Meteor.publish("find_models_module", function(moduleId) {
+	return Models.find({moduleId:moduleId}, {});
+});

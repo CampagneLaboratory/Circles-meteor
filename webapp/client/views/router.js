@@ -14,7 +14,7 @@ var publicRoutes = [
 	"projects.edit_project",
 	"modules",
 	"modules.module_details",
-	"modules.insert_module",
+	"modules.module_details.models_module",
 	"modules.edit_module",
 	"models",
 	"models.model_details",
@@ -27,15 +27,15 @@ var publicRoutes = [
 ];
 
 var privateRoutes = [
-	
+
 ];
 
 var freeRoutes = [
-	
+
 ];
 
 var roleMap = [
-	
+
 ];
 
 this.firstGrantedRoute = function(preferredRoute) {
@@ -113,7 +113,6 @@ this.routeGranted = function(routeName) {
 
 Router.ensureLogged = function() {
 	if(Meteor.userId() && (!Meteor.user() || !Meteor.user().roles)) {
-		this.render('loading');
 		return;
 	}
 
@@ -135,7 +134,6 @@ Router.ensureLogged = function() {
 
 Router.ensureNotLogged = function() {
 	if(Meteor.userId() && (!Meteor.user() || !Meteor.user().roles)) {
-		this.render('loading');
 		return;
 	}
 
@@ -151,7 +149,6 @@ Router.ensureNotLogged = function() {
 // called for pages in free zone - some of pages can be restricted
 Router.ensureGranted = function() {
 	if(Meteor.userId() && (!Meteor.user() || !Meteor.user().roles)) {
-		this.render('loading');
 		return;
 	}
 
@@ -164,14 +161,13 @@ Router.ensureGranted = function() {
 	}
 };
 
-Router.waitOn(function() { 
+Router.waitOn(function() {
 	Meteor.subscribe("current_user_data");
 });
 
 Router.onBeforeAction(function() {
 	// loading indicator here
 	if(!this.ready()) {
-		this.render('loading');
 		$("body").addClass("wait");
 	} else {
 		$("body").removeClass("wait");
@@ -184,7 +180,7 @@ Router.onBeforeAction(Router.ensureLogged, {only: privateRoutes});
 Router.onBeforeAction(Router.ensureGranted, {only: freeRoutes}); // yes, route from free zone can be restricted to specific set of user roles
 
 Router.map(function () {
-	
+
 	this.route("home", {path: "/", controller: "HomeController"});
 	this.route("projects", {path: "/projects", controller: "ProjectsController"});
 	this.route("projects.project_details", {path: "/projects/project_details/:id", controller: "ProjectsProjectDetailsController"});
@@ -192,7 +188,7 @@ Router.map(function () {
 	this.route("projects.edit_project", {path: "/projects/edit_project/:id", controller: "ProjectsEditProjectController"});
 	this.route("modules", {path: "/modules", controller: "ModulesController"});
 	this.route("modules.module_details", {path: "/modules/module_details/:moduleId", controller: "ModulesModuleDetailsController"});
-	this.route("modules.insert_module", {path: "/modules/insert_module", controller: "ModulesInsertModuleController"});
+	this.route("modules.module_details.models_module", {path: "/modules/module_details/:moduleId/models_module", controller: "ModulesModuleDetailsModelsModuleController"});
 	this.route("modules.edit_module", {path: "/modules/edit_module/:moduleId", controller: "ModulesEditModuleController"});
 	this.route("models", {path: "/models", controller: "ModelsController"});
 	this.route("models.model_details", {path: "/models/model_details/:modelId", controller: "ModelsModelDetailsController"});

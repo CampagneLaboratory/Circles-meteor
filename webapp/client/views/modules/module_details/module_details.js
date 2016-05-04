@@ -6,6 +6,10 @@ Template.ModulesModuleDetails.rendered = function() {
 
 Template.ModulesModuleDetails.events({
 	
+	"click #page-back-button": function(e, t) {
+		e.preventDefault();
+		Router.go("modules", {  });
+	}
 });
 
 Template.ModulesModuleDetails.helpers({

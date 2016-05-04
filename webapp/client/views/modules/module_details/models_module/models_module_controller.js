@@ -1,9 +1,10 @@
-this.ModulesModuleDetailsController = RouteController.extend({
+this.ModulesModuleDetailsModelsModuleController = RouteController.extend({
 	template: "ModulesModuleDetails",
 	
 
 	yieldTemplates: {
-		/*YIELD_TEMPLATES*/
+		'ModulesModuleDetailsModelsModule': { to: 'ModulesModuleDetailsSubcontent'}
+		
 	},
 
 	onBeforeAction: function() {
@@ -11,7 +12,7 @@ this.ModulesModuleDetailsController = RouteController.extend({
 	},
 
 	action: function() {
-		this.redirect('modules.module_details.models_module', this.params || {}, { replaceState: true });
+		if(this.isReady()) { this.render(); } else { this.render("ModulesModuleDetails"); this.render("loading", { to: "ModulesModuleDetailsSubcontent" });}
 		/*ACTION_FUNCTION*/
 	},
 
@@ -19,6 +20,7 @@ this.ModulesModuleDetailsController = RouteController.extend({
 		
 
 		var subs = [
+			Meteor.subscribe("find_models_module", this.params.moduleId),
 			Meteor.subscribe("find_module", this.params.moduleId)
 		];
 		var ready = true;
@@ -34,6 +36,7 @@ this.ModulesModuleDetailsController = RouteController.extend({
 
 		return {
 			params: this.params || {},
+			find_models_module: Models.find({moduleId:this.params.moduleId}, {}),
 			find_module: Modules.findOne({_id:this.params.moduleId}, {})
 		};
 		/*DATA_FUNCTION*/
