@@ -53,12 +53,9 @@
 	<table id="dataview-table" class="table table-striped table-hover">
 		<thead id="dataview-table-header">
 			<tr id="dataview-table-header-row">
-				<th class="th-sortable" data-sort="name">
-					Module name
+                <th class="th-sortable" data-sort="name">
+					Name
 				</th>
-                <th class="th-sortable" data-sort="type">
-                    Type
-                </th>
 				<th class="th-sortable" data-sort="createdBy">
 					Contributor
 				</th>
@@ -71,13 +68,19 @@
 </template>
 
 <template name="ModulesViewTableItems">
-	<tr id="dataview-table-items-row">
-		<td>
+	<tr id="dataview-table-items-row" >
+        <td>
+            {{#if isLanguage }}
+                L
+            {{else}}
+                {{#if isSolution }}
+                    S
+                {{else}}
+                    NA
+                {{/if}}
+            {{/if}}
 			{{name}}
 		</td>
-        <td>
-            {{type}}
-        </td>
 		<td>
 			{{createdBy}}
 		</td>
