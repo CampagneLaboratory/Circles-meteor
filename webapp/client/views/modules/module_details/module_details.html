@@ -26,11 +26,7 @@
 <template name="ModulesModuleDetailsDetailsForm">
 	<div id="modules-module-details-details-form" class="">
 		<h5 id="component-title">
-			<a href="#" id="form-back-button" class="btn btn-default" title="back">
-				<span class="fa fa-chevron-left">
-				</span>
-			</a>
-			Module: {{find_module.name}}
+			Module {{find_module.name}}
 		</h5>
 		<form role="form" class="form-horizontal">
 			{{#if errorMessage}}
@@ -44,26 +40,6 @@
 				{{infoMessage}}
 			</div>
 			{{/if}}
-			<div class="form-group  field-name">
-				<label for="name" class="col-sm-3 control-label">
-					Module name
-				</label>
-				<div class="input-div col-sm-9">
-					<p class="form-control-static">
-						{{find_module.name}}
-					</p>
-				</div>
-			</div>
-			<div class="form-group  field-model-id">
-				<label for="modelId" class="col-sm-3 control-label">
-					Contributor
-				</label>
-				<div class="input-div col-sm-9">
-					<p class="form-control-static">
-						{{find_module.createdBy}}
-					</p>
-				</div>
-			</div>
 			<div class="form-group">
 				<div class="submit-div col-sm-9 col-sm-offset-3">
 				</div>
