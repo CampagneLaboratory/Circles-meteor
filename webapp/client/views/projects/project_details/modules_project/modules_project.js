@@ -282,5 +282,12 @@ Template.ProjectsProjectDetailsModulesProjectModulesProjectViewTableItems.helper
 
 	"deleteButtonClass": function() {
 		return Modules.userCanRemove(Meteor.userId(), this) ? "" : "hidden";
+	},
+	"isLanguage": function() {
+		return this.type === "language";
+	},
+
+	"isSolution": function() {
+		return this.type === "solution";
 	}
 });

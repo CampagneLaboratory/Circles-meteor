@@ -67,7 +67,16 @@
 <template name="ProjectsProjectDetailsModulesProjectModulesProjectViewTableItems">
 	<tr id="dataview-table-items-row">
 		<td>
-			{{name}}
+            {{#if isLanguage }}
+                <img src="/images/language-icon-small.png">
+            {{else}}
+                {{#if isSolution }}
+                    <img src="/images/solution-icon-small.png">
+                {{else}}
+                    NA
+                {{/if}}
+            {{/if}}
+            {{name}}
 		</td>
 		<td>
 			{{createdBy}}
