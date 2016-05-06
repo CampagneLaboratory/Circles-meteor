@@ -26,11 +26,7 @@
 <template name="ProjectsProjectDetailsDetailsForm">
 	<div id="projects-project-details-details-form" class="">
 		<h5 id="component-title">
-			<a href="#" id="form-back-button" class="btn btn-default" title="back">
-				<span class="fa fa-chevron-left">
-				</span>
-			</a>
-			Project #{{find_project.name}}
+			Project {{find_project.name}}
 		</h5>
 		<form role="form" class="form-horizontal">
 			{{#if errorMessage}}
@@ -44,26 +40,6 @@
 				{{infoMessage}}
 			</div>
 			{{/if}}
-			<div class="form-group  field-name">
-				<label for="name" class="col-sm-3 control-label">
-					Project name
-				</label>
-				<div class="input-div col-sm-9">
-					<p class="form-control-static">
-						{{find_project.name}}
-					</p>
-				</div>
-			</div>
-			<div class="form-group  field-created-by">
-				<label for="createdBy" class="col-sm-3 control-label">
-					Contributor
-				</label>
-				<div class="input-div col-sm-9">
-					<p class="form-control-static">
-						{{find_project.createdBy}}
-					</p>
-				</div>
-			</div>
 			<div class="form-group">
 				<div class="submit-div col-sm-9 col-sm-offset-3">
 				</div>
