@@ -119,7 +119,7 @@ Router.ensureLogged = function() {
 
 	if(!Meteor.userId()) {
 		// user is not logged in - redirect to public home
-		var redirectRoute = firstGrantedRoute("home");
+		var redirectRoute = firstGrantedRoute("projects");
 		this.redirect(redirectRoute);
 	} else {
 		// user is logged in - check role
@@ -182,8 +182,8 @@ Router.onBeforeAction(Router.ensureGranted, {only: freeRoutes}); // yes, route f
 
 Router.map(function () {
 
-	this.route("home", {path: "/", controller: "HomeController"});
-	this.route("projects", {path: "/projects", controller: "ProjectsController"});
+	//this.route("home", {path: "/", controller: "HomeController"});
+	this.route("projects", {path: "/", controller: "ProjectsController"});
 	this.route("projects.project_details", {path: "/projects/project_details/:projectId", controller: "ProjectsProjectDetailsController"});
 	this.route("projects.project_details.modules_project", {path: "/projects/project_details/:projectId/modules_project", controller: "ProjectsProjectDetailsModulesProjectController"});
 	this.route("projects.insert_project", {path: "/projects/insert_project", controller: "ProjectsInsertProjectController"});
