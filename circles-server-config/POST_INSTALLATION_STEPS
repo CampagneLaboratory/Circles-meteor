@@ -1,0 +1,16 @@
+After installing mongo:
+
+1) add the internal Ip to the bind list in mongod.config
+2) disable authentication
+3) restart mongod
+4) connect to the database with:
+	mongo localhost:27017/circles 
+
+ and create the database and first users with:
+ > use circles
+ > db.createUser({ user:"", pwd: "", roles: [ "readWrite", "dbOwner" ]})
+ > db.createUser({ user:"", pwd: "", roles: [ "readWrite" ]})
+5) enable authentication again
+6) restart mongod
+7) modify the connection string in bin/runCircles.sh  with the user and password of the dbOwner
+
