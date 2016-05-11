@@ -2,15 +2,15 @@
 	<div class="page-container container" id="content">
 		<div class="row" id="title_row">
 			<div class="col-md-12">
-				<h2 id="page_title" class="pull-left">
-					Welcome to Circles!
-				</h2>
+				<h5 id="page_title" class="pull-left">
+				</h5>
 				<div id="page_menu" class="pull-right">
 				</div>
 			</div>
 		</div>
 		<p id="page_text">
-			Place for dashboard here...
+            Circles is a way to publish and view MPS-authored programs and data analyses in a web browser. You can view programs and analysis in MPS, but sometimes it is convenient to show the code in a web browser. Circles lets you do this easily.
+
 		</p>
 		{{> HomeSummary}}
 	</div>
@@ -18,9 +18,9 @@
 
 <template name="HomeSummary">
 	<div id="home-summary" class="">
-		<h2 id="component-title">
-			Published Content
-		</h2>
+		<p id="component-title">
+            The following projects are currently available in Circles:
+        </p>
 		<form id="dataview-controls" class="form-inline">
 			<div id="dataview-controls-search">
 				{{#if isNotEmpty}}
