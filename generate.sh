@@ -9,4 +9,6 @@ meteor-kitchen ./Circles.json ../Circles
 #mv -f  ~/Downloads/Circles.json .
 cd ../Circles
 meteor add jeremy:snapsvg
+meteor add okgrow:analytics
+
 

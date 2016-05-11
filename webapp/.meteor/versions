@@ -68,6 +68,7 @@ nemo64:bootstrap@3.3.5_2
 nemo64:bootstrap-data@3.3.5
 npm-mongo@1.4.43
 observe-sequence@1.0.11
+okgrow:analytics@1.0.5
 ordered-dict@1.0.7
 perak:joins@1.0.6
 perak:user-roles@1.0.10

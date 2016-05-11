@@ -113,6 +113,9 @@
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/livedata_common.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/client_convenience.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/id_map.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/client/collections.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/client/meteor-analytics.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/vendor/analytics.min.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/random_stream.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/method_invocation.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/namespace.js" />
@@ -321,6 +324,9 @@
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/livedata_common.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/client_convenience.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-client/1.2.7/web.browser/id_map.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/client/collections.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/client/meteor-analytics.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/okgrow_analytics/1.0.5/web.browser/vendor/analytics.min.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/random_stream.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/method_invocation.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ddp-common/1.2.5/web.browser/namespace.js" />
